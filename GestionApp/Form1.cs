@@ -22,7 +22,7 @@ namespace GestionApp
             Form3 frm = new Form3();
             
             frm.Show();
-            // base.Hide();
+            //// base.Hide();
         }
     }
 }
