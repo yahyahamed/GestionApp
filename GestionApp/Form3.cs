@@ -10,19 +10,11 @@ using System.Windows.Forms;
 
 namespace GestionApp
 {
-    public partial class Form1 : Form
+    public partial class Form3 : Form
     {
-        public Form1()
+        public Form3()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form3 frm = new Form3();
-            
-            frm.Show();
-            // base.Hide();
         }
     }
 }
