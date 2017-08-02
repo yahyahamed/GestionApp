@@ -26,5 +26,10 @@ namespace GestionApp
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            //text to search with
+        }
     }
 }

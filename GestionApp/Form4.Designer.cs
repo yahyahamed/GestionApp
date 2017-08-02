@@ -33,21 +33,21 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mohamedYahyaHamedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supprimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modifierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +57,7 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(4, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 29);
+            this.label1.Size = new System.Drawing.Size(105, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Debit";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -66,9 +66,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(117, 24);
+            this.label2.Location = new System.Drawing.Point(116, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 29);
+            this.label2.Size = new System.Drawing.Size(91, 29);
             this.label2.TabIndex = 1;
             this.label2.Text = "Credit";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -79,7 +79,7 @@
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Location = new System.Drawing.Point(161, 1);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(161, 52);
+            this.label6.Size = new System.Drawing.Size(160, 52);
             this.label6.TabIndex = 5;
             this.label6.Text = "type de compte";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -104,7 +104,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 114F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 102F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
             this.tableLayoutPanel1.Controls.Add(this.label6, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.menuStrip1, 0, 1);
@@ -115,48 +115,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(756, 397);
             this.tableLayoutPanel1.TabIndex = 6;
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel4.ColumnCount = 4;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.27103F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.72897F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 114F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
-            this.tableLayoutPanel4.Controls.Add(this.label1, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.label2, 1, 1);
-            this.tableLayoutPanel4.Controls.Add(this.label4, 2, 1);
-            this.tableLayoutPanel4.Controls.Add(this.label7, 3, 1);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(329, 85);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.39622F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.60378F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(431, 54);
-            this.tableLayoutPanel4.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Location = new System.Drawing.Point(216, 24);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 29);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Debiteur";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Location = new System.Drawing.Point(331, 24);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(96, 29);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Crediteur";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // menuStrip1
             // 
@@ -180,14 +138,56 @@
             // supprimerToolStripMenuItem
             // 
             this.supprimerToolStripMenuItem.Name = "supprimerToolStripMenuItem";
-            this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.supprimerToolStripMenuItem.Text = "Supprimer";
             // 
             // modifierToolStripMenuItem
             // 
             this.modifierToolStripMenuItem.Name = "modifierToolStripMenuItem";
-            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.modifierToolStripMenuItem.Text = "Modifier";
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel4.ColumnCount = 4;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.27103F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.72897F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 114F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
+            this.tableLayoutPanel4.Controls.Add(this.label1, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.label2, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.label4, 2, 1);
+            this.tableLayoutPanel4.Controls.Add(this.label7, 3, 1);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(329, 85);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.39622F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.60378F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(431, 54);
+            this.tableLayoutPanel4.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Location = new System.Drawing.Point(214, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(108, 29);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Debiteur";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label7.Location = new System.Drawing.Point(329, 24);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(98, 29);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Crediteur";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox1
             // 
@@ -195,6 +195,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(139, 20);
             this.textBox1.TabIndex = 9;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button1
             // 
@@ -258,10 +259,10 @@
             this.Load += new System.EventHandler(this.Form4_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel4.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
