@@ -7,22 +7,53 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace GestionApp
 {
     public partial class Form1 : Form
+
     {
+        private object TextBox;
+
+        public object Msgboxstyle { get; private set; }
+
         public Form1()
         {
             InitializeComponent();
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            Form3 frm = new Form3();
-            
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+
+        {
+
+
+            Form5 frm = new Form5();
+          
+
             frm.Show();
-            //// base.Hide();
+            // base.Hide();
+            
         }
     }
 }
