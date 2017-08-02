@@ -79,11 +79,11 @@
     <Compile Include="Form5.Designer.cs">
       <DependentUpon>Form5.cs</DependentUpon>
     </Compile>
-    <Compile Include="If.cs" />
-    <Compile Include="mysqlconnect.cs">
+    <Compile Include="Persistence\If.cs" />
+    <Compile Include="Persistence\mysqlconnect.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mysqlconnect.Designer.cs">
+    <Compile Include="Persistence\mysqlconnect.Designer.cs">
       <DependentUpon>mysqlconnect.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -103,7 +103,7 @@
     <EmbeddedResource Include="Form5.resx">
       <DependentUpon>Form5.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mysqlconnect.resx">
+    <EmbeddedResource Include="Persistence\mysqlconnect.resx">
       <DependentUpon>mysqlconnect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -128,8 +128,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Persistence\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
