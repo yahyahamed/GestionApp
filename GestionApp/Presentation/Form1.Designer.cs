@@ -58,6 +58,7 @@
             // 
             // button1
             // 
+            this.button1.ForeColor = System.Drawing.Color.Navy;
             this.button1.Location = new System.Drawing.Point(390, 171);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 31);
@@ -68,6 +69,7 @@
             // 
             // button2
             // 
+            this.button2.ForeColor = System.Drawing.Color.Navy;
             this.button2.Location = new System.Drawing.Point(471, 171);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 31);
@@ -79,7 +81,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(254, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 13);
@@ -89,7 +91,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label2.Location = new System.Drawing.Point(255, 113);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 13);
@@ -120,18 +122,20 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Navy;
             this.label4.Location = new System.Drawing.Point(44, 31);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(104, 31);
             this.label4.TabIndex = 0;
             this.label4.Text = "LOGIN";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Teal;
+            this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(595, 285);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);

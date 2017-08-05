@@ -19,7 +19,7 @@ namespace GestionApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form2 frm = new Form2();
+            Form5 frm = new Form5();
 
             frm.Show();
             // base.Hide();
@@ -27,10 +27,15 @@ namespace GestionApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form4 frm = new Form4();
+            Form2 frm = new Form2();
 
             frm.Show();
             // base.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

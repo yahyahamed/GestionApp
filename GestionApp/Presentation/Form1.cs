@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using System.Data;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace GestionApp
@@ -14,10 +16,7 @@ namespace GestionApp
     public partial class Form1 : Form
 
     {
-        private object TextBox;
-
-        public object Msgboxstyle { get; private set; }
-
+        
         public Form1()
         {
             InitializeComponent();
@@ -47,13 +46,17 @@ namespace GestionApp
 
         {
 
+                
+            {
+                Form3 frm = new Form3();
 
-            Form5 frm = new Form5();
+
+
+                frm.Show();
+                // base.Hide();
+
+            }
           
-
-            frm.Show();
-            // base.Hide();
-            
         }
     }
 }
