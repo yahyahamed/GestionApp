@@ -25,11 +25,25 @@ namespace GestionApp
         private void button1_Click(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            mysqlconnect db = new mysqlconnect();
-           
-            db.connectionstring.open();
+            MySql.Data.MySqlClient.MySqlConnection db;
+            mysqlconnect conn = new mysqlconnect();
+            string connectionString;
+
+            connectionString = "server=localhost;uid=root;" + "pwd=bobs1992;database=world;port=3360";
+
+            try
+            {
+                db = new MySql.Data.MySqlClient.MySqlConnection();
+                db.ConnectionString = connectionString;
+                db.Open();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
             dataGridView1.DataSource = dt;
-            db.connectionstring.close();
+            
 
 
 

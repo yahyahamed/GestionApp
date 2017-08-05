@@ -52,7 +52,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 124F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
             this.tableLayoutPanel1.Controls.Add(this.textBox3, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.textBox2, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.label5, 3, 0);
@@ -77,7 +77,7 @@
             this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox3.Location = new System.Drawing.Point(507, 30);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(118, 13);
+            this.textBox3.Size = new System.Drawing.Size(119, 13);
             this.textBox3.TabIndex = 7;
             this.textBox3.Text = "50150";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -101,7 +101,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(507, 1);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(118, 25);
+            this.label5.Size = new System.Drawing.Size(119, 25);
             this.label5.TabIndex = 3;
             this.label5.Text = "Credit(um)";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -158,7 +158,7 @@
             this.suprimerToolStripMenuItem,
             this.modifierToolStripMenuItem});
             this.mohamedYahyaHamedToolStripMenuItem.Name = "mohamedYahyaHamedToolStripMenuItem";
-            this.mohamedYahyaHamedToolStripMenuItem.Size = new System.Drawing.Size(151, 20);
+            this.mohamedYahyaHamedToolStripMenuItem.Size = new System.Drawing.Size(150, 20);
             this.mohamedYahyaHamedToolStripMenuItem.Text = "Mohamed Yahya Hamed";
             // 
             // suprimerToolStripMenuItem

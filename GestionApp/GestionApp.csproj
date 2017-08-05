@@ -73,10 +73,10 @@
     <Compile Include="Presentation\Form4.Designer.cs">
       <DependentUpon>Form4.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form5.cs">
+    <Compile Include="Presentation\Form5.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form5.Designer.cs">
+    <Compile Include="Presentation\Form5.Designer.cs">
       <DependentUpon>Form5.cs</DependentUpon>
     </Compile>
     <Compile Include="Persistence\If.cs" />
@@ -100,7 +100,7 @@
     <EmbeddedResource Include="Presentation\Form4.resx">
       <DependentUpon>Form4.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form5.resx">
+    <EmbeddedResource Include="Presentation\Form5.resx">
       <DependentUpon>Form5.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Persistence\mysqlconnect.resx">
