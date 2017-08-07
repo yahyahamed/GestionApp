@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GestionApp.BusinessLogic
+namespace GestionApp.BusinessLogic.DataManaging
 {
-    class ProcessLogin
+    class DataManaging
     {
     }
 }

@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using System.Data;
 
 namespace GestionApp
 {
@@ -19,6 +18,7 @@ namespace GestionApp
             InitializeComponent();
         }
 
+        //cree conneion au mysql
         MySqlConnection connection = new MySqlConnection("server=localhost;user id=root;database=cmpta");
         MySqlCommand command;
 
@@ -67,6 +67,7 @@ namespace GestionApp
         {
             try
             {
+                
                 openConnection();
                 command = new MySqlCommand(query, connection);
                 if (command.ExecuteNonQuery() == 1)
