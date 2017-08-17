@@ -31,13 +31,17 @@ namespace GestionApp
         /*public void populateDGV()
         {
 
-            // populate the datagridview
+            //populate the datagridview
             string selectQuery = "SELECT * FROM compte";
+
+
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, connection);
             adapter.Fill(table);
             dataGridView_compte.DataSource = table;
         }*/
+
+    
 
         private void dataGridView_compte_MouseClick(object sender, MouseEventArgs e)
         {
@@ -70,7 +74,8 @@ namespace GestionApp
                 MessageBox.Show(ex.Message);
             }
         }
-             // ajouter numero du compte
+        // ajouter numero du comptes
+
         private void button1_Click(object sender, EventArgs e)
         {
             String[] list= new String[] { textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text };
@@ -80,6 +85,7 @@ namespace GestionApp
             uiInterface.insertCompte(list);
             uiInterface.populateDGV();
         }
+       
 
           // modifier numero du compte
         private void button3_Click(object sender, EventArgs e)
@@ -146,6 +152,11 @@ namespace GestionApp
                 // base.Hide();
 
             }
-        }
+       
+    
+            
+               
+            }
+        
     }
 }

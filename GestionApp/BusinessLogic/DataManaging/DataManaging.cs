@@ -9,4 +9,5 @@ namespace GestionApp.BusinessLogic.DataManaging
     class DataManaging
     {
     }
+
 }
