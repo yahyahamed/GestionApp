@@ -10,6 +10,7 @@ namespace GestionApp.BusinessLogic
     {
         //This interface is to be used by UI to call business operations
         Boolean emailPassValidation();
+        void modifier();
 
     }
 }

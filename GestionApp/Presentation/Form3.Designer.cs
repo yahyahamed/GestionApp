@@ -87,6 +87,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Form3";
             this.Text = "option";
+            this.Load += new System.EventHandler(this.Form3_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

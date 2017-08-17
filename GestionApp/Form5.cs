@@ -19,23 +19,31 @@ namespace GestionApp
             InitializeComponent();
         }
 
-        MySqlConnection connection = new MySqlConnection("server=localhost;user id=root;database=cmpta");
+        MySqlConnection connection = new MySqlConnection("server=localhost;user id=root;database=gestion");
         MySqlCommand command;
+       
 
         private void Form5_Load(object sender, EventArgs e)
         {
             populateDGV();
+                
         }
         public void populateDGV()
         {
 
-            // populate the datagridview
+            //populate the datagridview
             string selectQuery = "SELECT * FROM compte";
+
+
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, connection);
             adapter.Fill(table);
             dataGridView_compte.DataSource = table;
+           
+
         }
+
+    
 
         private void dataGridView_compte_MouseClick(object sender, MouseEventArgs e)
         {
@@ -82,21 +90,75 @@ namespace GestionApp
                 MessageBox.Show(ex.Message);
             }finally
             {
+
                 closeConnection();
             }
         }
-             // ajouter numero du compte
+        // ajouter numero du comptes
+
         private void button1_Click(object sender, EventArgs e)
         {
-            string insertQuery = "INSERT INTO compte(id, NumeroDuCompte, Libelle, Debit, credit, Debiteur, Crediteur) VALUES('"+textBox1.Text+ "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "','" + textBox7.Text + "')";
+            double debiteur;
+            double crediteur;
+            double debitD;
+            double creditD;
+
+            //initialize variables
+
+            debitD = double.Parse(textBox4.Text);
+            creditD = double.Parse(textBox5.Text);
+            if (debitD > creditD)
+            {
+                debiteur = debitD - creditD;
+                crediteur = 0;
+            }
+            else if (creditD > debitD)
+            {
+                debiteur = 0;
+                crediteur = creditD - debitD;
+
+            }
+            else
+            {
+                debiteur = 0;
+                crediteur = 0;
+            }
+           
+            string insertQuery = "INSERT INTO compte(id, NumeroDuCompte, Libelle, Debit, credit, Debiteur, Crediteur) VALUES('"+textBox1.Text+ "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + debiteur + "','" + crediteur + "')";
             executeMyQuery(insertQuery);
             populateDGV();
         }
+       
 
           // modifier numero du compte
         private void button3_Click(object sender, EventArgs e)
         {
-            string updateQuery = "UPDATE compte SET id='" + textBox1.Text + "', NumeroDuCompte='" + textBox2.Text + "', Libelle='" + textBox3.Text + "', Debit='" + textBox4.Text + "', credit='" + textBox5.Text + "', Debiteur='" + textBox6.Text + "', Crediteur='" + textBox7.Text + "' WHERE ID="+int.Parse(textBox1.Text);
+            double debiteur;
+            double crediteur;
+            double debitD;
+            double creditD;
+
+            //initialize variables
+
+            debitD = double.Parse(textBox4.Text);
+            creditD = double.Parse(textBox5.Text);
+            if (debitD > creditD)
+            {
+                debiteur = debitD - creditD;
+                crediteur = 0;
+            }else if (creditD > debitD)
+            {
+                debiteur = 0;
+                crediteur = creditD -debitD;
+
+            }
+            else
+            {
+                debiteur = 0;
+                crediteur = 0;
+            }
+           
+            string updateQuery = "UPDATE compte SET id='" + textBox1.Text + "', NumeroDuCompte='" + textBox2.Text + "', Libelle='" + textBox3.Text + "', Debit='" + textBox4.Text + "', credit='" +textBox5.Text + "', Debiteur='" + debiteur + "', Crediteur='" +crediteur + "' WHERE ID="+int.Parse(textBox1.Text);
             executeMyQuery(updateQuery);
             populateDGV();
         }
@@ -147,6 +209,11 @@ namespace GestionApp
                 // base.Hide();
 
             }
-        }
+       
+    
+            
+               
+            }
+        
     }
 }
