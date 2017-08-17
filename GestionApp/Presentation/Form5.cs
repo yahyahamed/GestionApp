@@ -8,25 +8,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-
+using GestionApp.BusinessLogic;
 namespace GestionApp
 {
     public partial class Form5 : Form
     {
+        InterfaceUI uiInterface = new ProcessLogin();
         public Form5()
         {
             InitializeComponent();
         }
 
         //cree conneion au mysql
-        MySqlConnection connection = new MySqlConnection("server=localhost;user id=root;database=cmpta");
-        MySqlCommand command;
+        //MySqlConnection connection = new MySqlConnection("server=localhost;user id=root;database=cmpta");
+        //MySqlCommand command;
 
         private void Form5_Load(object sender, EventArgs e)
         {
-            populateDGV();
+            DataTable table = uiInterface.populateDGV();
+            dataGridView_compte.DataSource = table;
         }
-        public void populateDGV()
+        /*public void populateDGV()
         {
 
             // populate the datagridview
@@ -35,7 +37,7 @@ namespace GestionApp
             MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, connection);
             adapter.Fill(table);
             dataGridView_compte.DataSource = table;
-        }
+        }*/
 
         private void dataGridView_compte_MouseClick(object sender, MouseEventArgs e)
         {
@@ -48,29 +50,14 @@ namespace GestionApp
             textBox7.Text = dataGridView_compte.CurrentRow.Cells[6].Value.ToString();
             
         }
-        public void openConnection()
-        {
-            if(connection.State == ConnectionState.Closed)
-            {
-                connection.Open();
-            }
-        }
-        public void closeConnection()
-        {
-            if (connection.State == ConnectionState.Open)
-            {
-                connection.Close();
-            }
-        }
-
         public void executeMyQuery(string query)
         {
             try
             {
                 
-                openConnection();
-                command = new MySqlCommand(query, connection);
-                if (command.ExecuteNonQuery() == 1)
+                //openConnection();
+                //command = new MySqlCommand(query, connection);
+                if (uiInterface.executeRequest(query))
                 {
                     MessageBox.Show("query executed");
                 } else
@@ -81,60 +68,71 @@ namespace GestionApp
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }finally
-            {
-                closeConnection();
             }
         }
              // ajouter numero du compte
         private void button1_Click(object sender, EventArgs e)
         {
-            string insertQuery = "INSERT INTO compte(id, NumeroDuCompte, Libelle, Debit, credit, Debiteur, Crediteur) VALUES('"+textBox1.Text+ "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "','" + textBox7.Text + "')";
-            executeMyQuery(insertQuery);
-            populateDGV();
+            String[] list= new String[] { textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text };
+            //string insertQuery = "INSERT INTO compte(id, NumeroDuCompte, Libelle, Debit, credit, Debiteur, Crediteur) VALUES('"+textBox1.Text+ "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "','" + textBox7.Text + "')";
+            //executeMyQuery(insertQuery);
+            //String list= "";
+            uiInterface.insertCompte(list);
+            uiInterface.populateDGV();
         }
 
           // modifier numero du compte
         private void button3_Click(object sender, EventArgs e)
         {
-            string updateQuery = "UPDATE compte SET id='" + textBox1.Text + "', NumeroDuCompte='" + textBox2.Text + "', Libelle='" + textBox3.Text + "', Debit='" + textBox4.Text + "', credit='" + textBox5.Text + "', Debiteur='" + textBox6.Text + "', Crediteur='" + textBox7.Text + "' WHERE ID="+int.Parse(textBox1.Text);
-            executeMyQuery(updateQuery);
-            populateDGV();
+            //string updateQuery = "UPDATE compte SET id='" + textBox1.Text + "', NumeroDuCompte='" + textBox2.Text + "', Libelle='" + textBox3.Text + "', Debit='" + textBox4.Text + "', credit='" + textBox5.Text + "', Debiteur='" + textBox6.Text + "', Crediteur='" + textBox7.Text + "' WHERE ID="+int.Parse(textBox1.Text);
+            //executeMyQuery(updateQuery);
+            String[] list = new String[7];
+
+            list[0] = textBox1.Text;
+            list[1] = textBox2.Text;
+            list[2] = textBox3.Text;
+            list[3] = textBox4.Text;
+            list[4] = textBox5.Text;
+            uiInterface.updateCompte(list);
+            uiInterface.populateDGV();
         }
           
          // supprimer numero du compte
         private void button2_Click(object sender, EventArgs e)
         {
-            string deleteQuery = "DELETE FROM compte WHERE id = " + int.Parse(textBox1.Text);
-            executeMyQuery(deleteQuery);
-            populateDGV();
+            //string deleteQuery = "DELETE FROM compte WHERE id = " + int.Parse(textBox1.Text);
+            //executeMyQuery(deleteQuery);
+            uiInterface.deleteCompte(int.Parse(textBox1.Text));
+            uiInterface.populateDGV();
         }
 
            // chercher numero du compte
         private void button4_Click(object sender, EventArgs e)
         {
-            MySqlDataReader mdr;
-            string select = "SELECT * FROM compte WHERE  NumeroDuCompte = " + int.Parse(textBox2.Text) ;
+            //MySqlDataReader mdr;
+            //string select = "SELECT * FROM compte WHERE  NumeroDuCompte = " + int.Parse(textBox2.Text) ;
            
-            command = new MySqlCommand(select, connection);
-            openConnection();
-            mdr = command.ExecuteReader();
-            if (mdr.Read())
+            //command = new MySqlCommand(select, connection);
+            //openConnection();
+            //mdr = command.ExecuteReader();
+            String[] list;
+            list = uiInterface.search(int.Parse(textBox2.Text));
+            if (list!=null)//mdr.Read())
             {
-                textBox1.Text = mdr.GetString("id");
-                textBox2.Text = mdr.GetString("NumeroDuCompte");
-                textBox3.Text = mdr.GetString("Libelle");
-                textBox4.Text = mdr.GetString("Debit");
-                textBox5.Text = mdr.GetString("credit");
-                textBox6.Text = mdr.GetString("Debiteur");
-                textBox7.Text = mdr.GetString("Crediteur");
+                textBox1.Text = list[0];// mdr.GetString("id");
+                textBox2.Text = list[1];// mdr.GetString("NumeroDuCompte");
+                textBox3.Text = list[2];// mdr.GetString("Libelle");
+                textBox4.Text = list[3];// mdr.GetString("Debit");
+                textBox5.Text = list[4];// mdr.GetString("credit");
+                textBox6.Text = list[5];// mdr.GetString("Debiteur");
+                textBox7.Text = list[6];// mdr.GetString("Crediteur");
             }
             else
             {
                 MessageBox.Show("User Not found");
             }
 
-            closeConnection();
+            //closeConnection();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

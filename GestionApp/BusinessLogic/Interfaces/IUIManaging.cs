@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,11 +11,11 @@ namespace GestionApp.BusinessLogic
     {
         //This interface is to be used by UI to call business operations
         Boolean emailPassValidation();
-        void populateDGV();
-        void openConnexion();
-        void closeConnexion();
-        void insertCompte();
-        void updateCompte();
-        void deleteCompte();
+        DataTable populateDGV();
+        Boolean executeRequest(String listOfTextBoxes);
+        void insertCompte(String[] list);
+        void updateCompte(String[] list);
+        void deleteCompte(int id);
+        String[] search(int id);
     }
 }
