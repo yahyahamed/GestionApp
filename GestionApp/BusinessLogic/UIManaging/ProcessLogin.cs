@@ -37,7 +37,32 @@ namespace GestionApp.BusinessLogic
 
         public void insertCompte(String[] list)
         {
-            string insertQuery = "INSERT INTO compte(id, NumeroDuCompte, Libelle, Debit, credit, Debiteur, Crediteur) VALUES('"+ list[0] + "','" + list[1] + "','" + list[2] + "','" + list[3] + "','" + list[4] + "','";// + list[5] + "','" + list[6] + "')";
+            double debiteur;
+            double crediteur;
+            double debitD;
+            double creditD;
+
+            //initialize variables
+
+            debitD = double.Parse(list[3]);
+            creditD = double.Parse(list[4]);
+            if (debitD > creditD)
+            {
+                debiteur = debitD - creditD;
+                crediteur = 0;
+            }
+            else if (creditD > debitD)
+            {
+                debiteur = 0;
+                crediteur = creditD - debitD;
+
+            }
+            else
+            {
+                debiteur = 0;
+                crediteur = 0;
+            }
+            string insertQuery = "INSERT INTO compte(id, NumeroDuCompte, Libelle, Debit, credit, Debiteur, Crediteur) VALUES('"+ list[0] + "','" + list[1] + "','" + list[2] + "','" + list[3] + "','" + list[4] + "','" + debiteur + "','" + crediteur + "')";
             executeRequest(insertQuery);
             
         }
@@ -82,7 +107,32 @@ namespace GestionApp.BusinessLogic
 
         public void updateCompte(String[] list)
         {
-            string updateQuery = "UPDATE compte SET id='" + list[0] + "', NumeroDuCompte='" + list[1] + "', Libelle='" + list[2] + "', Debit='" + list[3] + "', credit='" + list[4] + "', Debiteur='" + /*textBox6.Text + "', Crediteur='" + textBox7.Text +*/ "' WHERE ID=" + int.Parse(list[0]);
+            double debiteur;
+            double crediteur;
+            double debitD;
+            double creditD;
+
+            //initialize variables
+
+            debitD = double.Parse(list[3]);
+            creditD = double.Parse(list[4]);
+            if (debitD > creditD)
+            {
+                debiteur = debitD - creditD;
+                crediteur = 0;
+            }
+            else if (creditD > debitD)
+            {
+                debiteur = 0;
+                crediteur = creditD - debitD;
+
+            }
+            else
+            {
+                debiteur = 0;
+                crediteur = 0;
+            }
+            string updateQuery = "UPDATE compte SET id='" + list[0] + "', NumeroDuCompte='" + list[1] + "', Libelle='" + list[2] + "', Debit='" + list[3] + "', credit='" + list[4] + "', Debiteur='" + debiteur + "', Crediteur='" + crediteur + "' WHERE ID=" + int.Parse(list[0]);
             executeRequest(updateQuery);
         }
         public String[] search(int numCompte)
