@@ -90,7 +90,7 @@ namespace GestionApp.BusinessLogic
             }
             finally
             {
-                closeConnexion();
+                //closeConnexion();
             }
             
             return command.ExecuteNonQuery() == 1;
