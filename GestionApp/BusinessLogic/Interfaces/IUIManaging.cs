@@ -11,7 +11,7 @@ namespace GestionApp.BusinessLogic
     {
         //This interface is to be used by UI to call business operations
         Boolean emailPassValidation();
-        DataTable populateDGV();
+        DataTable populateTable();
         Boolean executeRequest(String listOfTextBoxes);
         void insertCompte(String[] list);
         void updateCompte(String[] list);

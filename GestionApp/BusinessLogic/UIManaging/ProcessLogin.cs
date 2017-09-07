@@ -79,6 +79,7 @@ namespace GestionApp.BusinessLogic
         }
         public Boolean executeRequest(String listOfTextBoxes)
         {
+            Boolean result = false;
             try
             {
                 openConnexion();
@@ -92,10 +93,10 @@ namespace GestionApp.BusinessLogic
             {
                 //closeConnexion();
             }
-            
-            return command.ExecuteNonQuery() == 1;
+            result = command.ExecuteNonQuery() == 1;
+            return result;
         }
-        public DataTable populateDGV()
+        public DataTable populateTable()
         {
             // populate the datagridview
             string selectQuery = "SELECT * FROM compte";
