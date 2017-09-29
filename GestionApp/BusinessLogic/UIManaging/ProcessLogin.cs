@@ -11,7 +11,7 @@ namespace GestionApp.BusinessLogic
     class ProcessLogin : InterfaceUI
     {
         //cree conneion au mysql
-        MySqlConnection connection = new MySqlConnection("server=localhost;user id=root;database=cmpta");
+        MySqlConnection connection = new MySqlConnection("server=localhost;user id=root;database=gestionc");
         MySqlCommand command;
         private Boolean closeConnexion()
         {

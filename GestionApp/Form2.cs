@@ -19,7 +19,7 @@ namespace GestionApp
             InitializeComponent();
         }
 
-        MySqlConnection connection = new MySqlConnection("server=localhost;user id=root;database=cmpta");
+        MySqlConnection connection = new MySqlConnection("server=localhost;user id=root;database=gestion");
         MySqlCommand command;
 
         private void Form5_Load(object sender, EventArgs e)
@@ -116,6 +116,11 @@ namespace GestionApp
                 // base.Hide();
 
             }
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

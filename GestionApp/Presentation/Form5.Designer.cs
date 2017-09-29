@@ -51,6 +51,7 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.label9 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_compte)).BeginInit();
             this.SuspendLayout();
             // 
@@ -177,9 +178,9 @@
             // 
             this.dataGridView_compte.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView_compte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_compte.Location = new System.Drawing.Point(506, 184);
+            this.dataGridView_compte.Location = new System.Drawing.Point(457, 184);
             this.dataGridView_compte.Name = "dataGridView_compte";
-            this.dataGridView_compte.Size = new System.Drawing.Size(744, 365);
+            this.dataGridView_compte.Size = new System.Drawing.Size(855, 365);
             this.dataGridView_compte.TabIndex = 12;
             this.dataGridView_compte.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_compte_MouseClick);
             // 
@@ -284,12 +285,23 @@
             this.label9.TabIndex = 22;
             this.label9.Text = "Gestion des comptes";
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(457, 120);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(124, 46);
+            this.button5.TabIndex = 23;
+            this.button5.Text = "sous-compte";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(1305, 608);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
@@ -347,5 +359,6 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button5;
     }
 }

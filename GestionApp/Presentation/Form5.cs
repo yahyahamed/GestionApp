@@ -20,13 +20,14 @@ namespace GestionApp
         }
 
         //cree conneion au mysql
-        //MySqlConnection connection = new MySqlConnection("server=localhost;user id=root;database=cmpta");
+        //MySqlConnection connection = new MySqlConnection("server=localhost;user id=root;database=");
         //MySqlCommand command;
 
         private void Form5_Load(object sender, EventArgs e)
         {
             DataTable table = uiInterface.populateDGV();
             dataGridView_compte.DataSource = table;
+           
         }
         /*public void populateDGV()
         {
@@ -45,13 +46,13 @@ namespace GestionApp
 
         private void dataGridView_compte_MouseClick(object sender, MouseEventArgs e)
         {
-            textBox1.Text = dataGridView_compte.CurrentRow.Cells[0].Value.ToString();
-            textBox2.Text = dataGridView_compte.CurrentRow.Cells[1].Value.ToString();
-            textBox3.Text = dataGridView_compte.CurrentRow.Cells[2].Value.ToString();
-            textBox4.Text = dataGridView_compte.CurrentRow.Cells[3].Value.ToString();
-            textBox5.Text = dataGridView_compte.CurrentRow.Cells[4].Value.ToString();
-            textBox6.Text = dataGridView_compte.CurrentRow.Cells[5].Value.ToString();
-            textBox7.Text = dataGridView_compte.CurrentRow.Cells[6].Value.ToString();
+            textBox1.Text = dataGridView_compte.CurrentRow.Cells[2].Value.ToString();
+            textBox2.Text = dataGridView_compte.CurrentRow.Cells[3].Value.ToString();
+            textBox3.Text = dataGridView_compte.CurrentRow.Cells[4].Value.ToString();
+            textBox4.Text = dataGridView_compte.CurrentRow.Cells[5].Value.ToString();
+            textBox5.Text = dataGridView_compte.CurrentRow.Cells[6].Value.ToString();
+            textBox6.Text = dataGridView_compte.CurrentRow.Cells[7].Value.ToString();
+            textBox7.Text = dataGridView_compte.CurrentRow.Cells[8].Value.ToString();
             
         }
         public void executeMyQuery(string query)
@@ -157,6 +158,15 @@ namespace GestionApp
             
                
             }
-        
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+            Form4 frm = new Form4();
+
+
+
+            frm.Show();
+        }
     }
 }
