@@ -14,6 +14,7 @@ namespace GestionApp
     public partial class Form5 : Form
     {
         InterfaceUI uiInterface = new ProcessLogin();
+        DataTable table;
         public Form5()
         {
             InitializeComponent();
@@ -25,22 +26,23 @@ namespace GestionApp
 
         private void Form5_Load(object sender, EventArgs e)
         {
-            DataTable table = uiInterface.populateDGV();
+            table = uiInterface.populateTable();
             dataGridView_compte.DataSource = table;
            
         }
-        /*public void populateDGV()
+        public void populateDGV()
         {
 
             //populate the datagridview
-            string selectQuery = "SELECT * FROM compte";
+            //string selectQuery = "SELECT * FROM compte";
 
 
-            DataTable table = new DataTable();
-            MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, connection);
-            adapter.Fill(table);
+            //DataTable table = new DataTable();
+            //MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, connection);
+            //adapter.Fill(table);
+            table = uiInterface.populateTable();
             dataGridView_compte.DataSource = table;
-        }*/
+        }
 
     
 
@@ -84,7 +86,8 @@ namespace GestionApp
             //executeMyQuery(insertQuery);
             //String list= "";
             uiInterface.insertCompte(list);
-            uiInterface.populateDGV();
+
+            populateDGV();
         }
        
 
@@ -101,7 +104,7 @@ namespace GestionApp
             list[3] = textBox4.Text;
             list[4] = textBox5.Text;
             uiInterface.updateCompte(list);
-            uiInterface.populateDGV();
+            populateDGV();
         }
           
          // supprimer numero du compte
@@ -110,7 +113,7 @@ namespace GestionApp
             //string deleteQuery = "DELETE FROM compte WHERE id = " + int.Parse(textBox1.Text);
             //executeMyQuery(deleteQuery);
             uiInterface.deleteCompte(int.Parse(textBox1.Text));
-            uiInterface.populateDGV();
+            populateDGV();
         }
 
            // chercher numero du compte
