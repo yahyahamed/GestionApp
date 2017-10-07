@@ -141,6 +141,7 @@
             this.button4.TabIndex = 31;
             this.button4.Text = "SEARCH";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -152,6 +153,7 @@
             this.button3.TabIndex = 30;
             this.button3.Text = "UPDATE";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -163,6 +165,7 @@
             this.button2.TabIndex = 29;
             this.button2.Text = "DELETE";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -174,6 +177,7 @@
             this.button1.TabIndex = 28;
             this.button1.Text = "INSERT";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
             // 
@@ -277,6 +281,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(617, 364);
             this.dataGridView1.TabIndex = 42;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_MouseClick);
             // 
             // Form4
             // 

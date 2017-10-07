@@ -8,11 +8,13 @@ using System.Threading.Tasks;
 
 namespace GestionApp.BusinessLogic
 {
-    class ProcessLogin : InterfaceUI
+    class ProcessForm5 : InterfaceUI
     {
-        //cree conneion au mysql
+        //cree connexion au mysql
         MySqlConnection connection = new MySqlConnection("server=localhost;user id=root;database=gestionc");
         MySqlCommand command;
+
+        /***************************************************************/
         private Boolean closeConnexion()
         {
             Boolean result;
@@ -24,17 +26,20 @@ namespace GestionApp.BusinessLogic
             return result;
         }
 
+        /***************************************************************/
         public void deleteCompte(int id)
         {
             string deleteQuery = "DELETE FROM compte WHERE id = " + id;
             executeRequest(deleteQuery);
         }
 
+        /***************************************************************/
         public bool emailPassValidation()
         {
             throw new NotImplementedException();
         }
 
+        /***************************************************************/
         public void insertCompte(String[] list)
         {
             double debiteur;
@@ -43,7 +48,6 @@ namespace GestionApp.BusinessLogic
             double creditD;
 
             //initialize variables
-
             debitD = double.Parse(list[3]);
             creditD = double.Parse(list[4]);
             if (debitD > creditD)
@@ -67,6 +71,7 @@ namespace GestionApp.BusinessLogic
             
         }
 
+        /***************************************************************/
         private bool openConnexion()
         {
             Boolean result;
@@ -77,6 +82,8 @@ namespace GestionApp.BusinessLogic
             result = connection.State == ConnectionState.Open;
             return result;
         }
+
+        /***************************************************************/
         public Boolean executeRequest(String listOfTextBoxes)
         {
             Boolean result = false;
@@ -96,9 +103,11 @@ namespace GestionApp.BusinessLogic
             result = command.ExecuteNonQuery() == 1;
             return result;
         }
+
+        /***************************************************************/
         public DataTable populateTable()
         {
-            // populate the datagridview
+            // populate the table for datagridview
             string selectQuery = "SELECT * FROM compte";
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, connection);
@@ -106,6 +115,7 @@ namespace GestionApp.BusinessLogic
             return table;
         }
 
+        /***************************************************************/
         public void updateCompte(String[] list)
         {
             double debiteur;
@@ -114,7 +124,6 @@ namespace GestionApp.BusinessLogic
             double creditD;
 
             //initialize variables
-
             debitD = double.Parse(list[3]);
             creditD = double.Parse(list[4]);
             if (debitD > creditD)
@@ -136,6 +145,8 @@ namespace GestionApp.BusinessLogic
             string updateQuery = "UPDATE compte SET id='" + list[0] + "', NumeroDuCompte='" + list[1] + "', Libelle='" + list[2] + "', Debit='" + list[3] + "', credit='" + list[4] + "', Debiteur='" + debiteur + "', Crediteur='" + crediteur + "' WHERE ID=" + int.Parse(list[0]);
             executeRequest(updateQuery);
         }
+
+        /***************************************************************/
         public String[] search(int numCompte)
         {
             String[] list = new String[7];
