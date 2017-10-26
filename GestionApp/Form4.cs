@@ -92,5 +92,56 @@ namespace GestionApp
         {
 
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form5 frm = new Form5();
+
+
+
+            frm.Show();
+            this.Hide();
+        }
+
+        private void label10_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+            int A = 0, B = 0;
+            for (A = 0; A < dataGridView1.Rows.Count; ++A)
+            {
+                B += Convert.ToInt32(dataGridView1.Rows[A].Cells[3].Value);
+
+            }
+            label14.Text = B.ToString();
+            int c = 0, d = 0;
+            for (c = 0; c < dataGridView1.Rows.Count; ++c)
+            {
+                d += Convert.ToInt32(dataGridView1.Rows[c].Cells[4].Value);
+
+            }
+            label15.Text = d.ToString();
+
+
+            int i = 0, f = 0;
+            for (i = 0; i < dataGridView1.Rows.Count; ++i)
+            {
+                f += Convert.ToInt32(dataGridView1.Rows[i].Cells[5].Value);
+
+            }
+            label16.Text = f.ToString();
+
+            int g = 0, h = 0;
+            for (g = 0; g < dataGridView1.Rows.Count; ++g)
+            {
+                h += Convert.ToInt32(dataGridView1.Rows[g].Cells[6].Value);
+
+            }
+            label17.Text = h.ToString();
+        }
     }
 }

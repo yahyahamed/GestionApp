@@ -24,6 +24,7 @@ namespace GestionApp.BusinessLogic
             return result;
         }
 
+
         public void deleteCompte(int id)
         {
             string deleteQuery = "DELETE FROM compte WHERE id = " + id;

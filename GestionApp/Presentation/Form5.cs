@@ -148,11 +148,12 @@ namespace GestionApp
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             {
-                Form2 frm = new Form2();
+                //Form2 frm = new Form2();
 
 
 
-                frm.Show();
+                //frm.Show();
+                //this.Hide();
                 // base.Hide();
 
             }
@@ -167,9 +168,51 @@ namespace GestionApp
 
             Form4 frm = new Form4();
 
-
+           
 
             frm.Show();
+            this.Hide();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            int A = 0, B = 0;
+            for (A = 0; A < dataGridView_compte.Rows.Count; ++A)
+            {
+                B += Convert.ToInt32(dataGridView_compte.Rows[A].Cells[5].Value);
+
+            }
+            label14.Text = B.ToString();
+            int c = 0, d = 0;
+            for (c = 0; c < dataGridView_compte.Rows.Count; ++c)
+            {
+                d += Convert.ToInt32(dataGridView_compte.Rows[c].Cells[6].Value);
+
+            }
+            label15.Text = d.ToString();
+
+
+            int i = 0, f = 0;
+            for (i = 0; i < dataGridView_compte.Rows.Count; ++i)
+            {
+                f += Convert.ToInt32(dataGridView_compte.Rows[i].Cells[7].Value);
+
+            }
+            label16.Text = f.ToString();
+
+            int g = 0, h = 0;
+            for (g = 0; g < dataGridView_compte.Rows.Count; ++g)
+            {
+                h += Convert.ToInt32(dataGridView_compte.Rows[g].Cells[8].Value);
+
+            }
+            label17.Text = h.ToString();
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

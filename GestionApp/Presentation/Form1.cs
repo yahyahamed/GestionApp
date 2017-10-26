@@ -16,7 +16,8 @@ namespace GestionApp
     public partial class Form1 : Form
 
     {
-        
+        private object Me;
+
         public Form1()
         {
             InitializeComponent();
@@ -37,26 +38,56 @@ namespace GestionApp
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
+            Form5 frm = new Form5();
+
+            frm.Show();
+            this.Hide();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
+        // base.Hide();
 
-        private void button2_Click(object sender, EventArgs e)
+        // MySqlConnection connection = new MySqlConnection("server=localhost;user id=root;database=gestionc");
+        //MySqlDataAdapter da = new MySqlDataAdapter("select * from admins where NomComplet = '" + user.Text + "' and MotDepasse= '" + pass.Text + "' ", connection);
+        //DataTable dt = new DataTable();
+        // da.Fill(dt);
+        // if 
 
-        {
+        //(dt.Rows[0][0].ToString() == "1")
 
-                
-            {
-                Form3 frm = new Form3();
-
-
-
-                frm.Show();
-                // base.Hide();
-
-            }
-          
-        }
+        // }
+        // else
+        //{
+        //MessageBox.Show("le mot de passe ou le nom est incorrect", "alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
     }
 }
+       
+    
+
