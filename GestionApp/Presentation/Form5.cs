@@ -119,14 +119,7 @@ namespace GestionApp
             
         }
 
-        /***************************************************************/
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            {
-                Form2 frm = new Form2();
-                frm.Show();
-            }
-        }
+        
 
         /***************************************************************/
         private void button5_Click(object sender, EventArgs e)
