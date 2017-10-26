@@ -1,51 +1,35 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 using GestionApp.BusinessLogic;
 namespace GestionApp
 {
     public partial class Form5 : Form
     {
-        InterfaceUI uiInterface = new ProcessLogin();
+        InterfaceUI uiInterface = new ProcessForm5();
         DataTable table;
+
         public Form5()
         {
             InitializeComponent();
         }
 
-        //cree conneion au mysql
-        //MySqlConnection connection = new MySqlConnection("server=localhost;user id=root;database=");
-        //MySqlCommand command;
-
+        /***************************************************************/
         private void Form5_Load(object sender, EventArgs e)
         {
             table = uiInterface.populateTable();
             dataGridView_compte.DataSource = table;
            
         }
+
+        /***************************************************************/
         public void populateDGV()
         {
-
-            //populate the datagridview
-            //string selectQuery = "SELECT * FROM compte";
-
-
-            //DataTable table = new DataTable();
-            //MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, connection);
-            //adapter.Fill(table);
             table = uiInterface.populateTable();
             dataGridView_compte.DataSource = table;
         }
 
-    
-
+        /***************************************************************/
         private void dataGridView_compte_MouseClick(object sender, MouseEventArgs e)
         {
             textBox1.Text = dataGridView_compte.CurrentRow.Cells[2].Value.ToString();
@@ -57,13 +41,12 @@ namespace GestionApp
             textBox7.Text = dataGridView_compte.CurrentRow.Cells[8].Value.ToString();
             
         }
+
+        /***************************************************************/
         public void executeMyQuery(string query)
         {
             try
             {
-                
-                //openConnection();
-                //command = new MySqlCommand(query, connection);
                 if (uiInterface.executeRequest(query))
                 {
                     MessageBox.Show("query executed");
@@ -77,25 +60,20 @@ namespace GestionApp
                 MessageBox.Show(ex.Message);
             }
         }
-        // ajouter numero du comptes
 
+        /***************************************************************/
         private void button1_Click(object sender, EventArgs e)
         {
+            //inserer
             String[] list= new String[] { textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text };
-            //string insertQuery = "INSERT INTO compte(id, NumeroDuCompte, Libelle, Debit, credit, Debiteur, Crediteur) VALUES('"+textBox1.Text+ "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "','" + textBox7.Text + "')";
-            //executeMyQuery(insertQuery);
-            //String list= "";
             uiInterface.insertCompte(list);
-
             populateDGV();
         }
-       
 
-          // modifier numero du compte
+        /***************************************************************/
+        // modifier numero du compte
         private void button3_Click(object sender, EventArgs e)
         {
-            //string updateQuery = "UPDATE compte SET id='" + textBox1.Text + "', NumeroDuCompte='" + textBox2.Text + "', Libelle='" + textBox3.Text + "', Debit='" + textBox4.Text + "', credit='" + textBox5.Text + "', Debiteur='" + textBox6.Text + "', Crediteur='" + textBox7.Text + "' WHERE ID="+int.Parse(textBox1.Text);
-            //executeMyQuery(updateQuery);
             String[] list = new String[7];
 
             list[0] = textBox1.Text;
@@ -106,8 +84,9 @@ namespace GestionApp
             uiInterface.updateCompte(list);
             populateDGV();
         }
-          
-         // supprimer numero du compte
+
+        /***************************************************************/
+        // supprimer numero du compte
         private void button2_Click(object sender, EventArgs e)
         {
             //string deleteQuery = "DELETE FROM compte WHERE id = " + int.Parse(textBox1.Text);
@@ -116,103 +95,44 @@ namespace GestionApp
             populateDGV();
         }
 
-           // chercher numero du compte
+        /***************************************************************/
+        // chercher numero du compte
         private void button4_Click(object sender, EventArgs e)
         {
-            //MySqlDataReader mdr;
-            //string select = "SELECT * FROM compte WHERE  NumeroDuCompte = " + int.Parse(textBox2.Text) ;
-           
-            //command = new MySqlCommand(select, connection);
-            //openConnection();
-            //mdr = command.ExecuteReader();
+            
             String[] list;
             list = uiInterface.search(int.Parse(textBox2.Text));
-            if (list!=null)//mdr.Read())
+            if (list!=null)
             {
-                textBox1.Text = list[0];// mdr.GetString("id");
-                textBox2.Text = list[1];// mdr.GetString("NumeroDuCompte");
-                textBox3.Text = list[2];// mdr.GetString("Libelle");
-                textBox4.Text = list[3];// mdr.GetString("Debit");
-                textBox5.Text = list[4];// mdr.GetString("credit");
-                textBox6.Text = list[5];// mdr.GetString("Debiteur");
-                textBox7.Text = list[6];// mdr.GetString("Crediteur");
+                textBox1.Text = list[0];
+                textBox2.Text = list[1];
+                textBox3.Text = list[2];
+                textBox4.Text = list[3];
+                textBox5.Text = list[4];
+                textBox6.Text = list[5];
+                textBox7.Text = list[6];
             }
             else
             {
                 MessageBox.Show("User Not found");
             }
-
-            //closeConnection();
+            
         }
 
+        /***************************************************************/
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             {
-                //Form2 frm = new Form2();
-
-
-
-                //frm.Show();
-                //this.Hide();
-                // base.Hide();
-
+                Form2 frm = new Form2();
+                frm.Show();
             }
-       
-    
-            
-               
-            }
+        }
 
+        /***************************************************************/
         private void button5_Click(object sender, EventArgs e)
         {
-
             Form4 frm = new Form4();
-
-           
-
             frm.Show();
-            this.Hide();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            int A = 0, B = 0;
-            for (A = 0; A < dataGridView_compte.Rows.Count; ++A)
-            {
-                B += Convert.ToInt32(dataGridView_compte.Rows[A].Cells[5].Value);
-
-            }
-            label14.Text = B.ToString();
-            int c = 0, d = 0;
-            for (c = 0; c < dataGridView_compte.Rows.Count; ++c)
-            {
-                d += Convert.ToInt32(dataGridView_compte.Rows[c].Cells[6].Value);
-
-            }
-            label15.Text = d.ToString();
-
-
-            int i = 0, f = 0;
-            for (i = 0; i < dataGridView_compte.Rows.Count; ++i)
-            {
-                f += Convert.ToInt32(dataGridView_compte.Rows[i].Cells[7].Value);
-
-            }
-            label16.Text = f.ToString();
-
-            int g = 0, h = 0;
-            for (g = 0; g < dataGridView_compte.Rows.Count; ++g)
-            {
-                h += Convert.ToInt32(dataGridView_compte.Rows[g].Cells[8].Value);
-
-            }
-            label17.Text = h.ToString();
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

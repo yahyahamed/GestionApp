@@ -69,7 +69,8 @@
     <Compile Include="BusinessLogic\DataManaging\DataManaging.cs" />
     <Compile Include="BusinessLogic\Interfaces\IDataManaging.cs" />
     <Compile Include="BusinessLogic\Interfaces\IUIManaging.cs" />
-    <Compile Include="BusinessLogic\UIManaging\ProcessLogin.cs" />
+    <Compile Include="BusinessLogic\UIManaging\ProcessForm4.cs" />
+    <Compile Include="BusinessLogic\UIManaging\ProcessForm5.cs" />
     <Compile Include="Form4.cs">
       <SubType>Form</SubType>
     </Compile>
