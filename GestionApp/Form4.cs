@@ -20,7 +20,7 @@ namespace GestionApp
         {
             InitializeComponent();
         }
-        MySqlConnection connection = new MySqlConnection("server=localhost;user id=root;database=gestionc");
+        MySqlConnection connection = new MySqlConnection("server=localhost;port=3307;user id=root;database=gestionc");
         MySqlCommand command;
 
         /***************************************************************/

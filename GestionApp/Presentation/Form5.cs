@@ -127,5 +127,10 @@ namespace GestionApp
             Form4 frm = new Form4();
             frm.Show();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

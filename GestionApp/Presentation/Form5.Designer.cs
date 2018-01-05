@@ -101,7 +101,6 @@
             this.label1.Size = new System.Drawing.Size(168, 23);
             this.label1.TabIndex = 4;
             this.label1.Text = "NumeroDuCompte";
-            //this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -290,7 +289,7 @@
             this.button6.TabIndex = 24;
             this.button6.Text = "sum";
             this.button6.UseVisualStyleBackColor = false;
-            //this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // label10
             // 
@@ -394,7 +393,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1370, 750);
+            this.ClientSize = new System.Drawing.Size(1362, 741);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
